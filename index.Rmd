@@ -1,0 +1,41 @@
+```{r,echo=FALSE}
+setlocale<-Sys.setlocale("LC_TIME", "English")
+```
+
+
+---
+title: "Map for Coursera, Developing Data Products, week2"
+author: ""
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r map, echo=FALSE, warning=FALSE}
+
+library(leaflet)
+#print(Sys.Date())
+
+
+my_popup<-c("Peter, new home","Peter, old home")
+
+my_latlong<-data.frame(lat=c(47.509749,47.498128),lng=c(19.108569,19.068322))
+
+
+my_latlong %>%
+leaflet() %>%
+addTiles() %>%
+addMarkers(popup = my_popup)
+
+
+#my_map<-addMarkers(addTiles(leaflet(df)))
+
+
+
+#my_map
+
+```
+
